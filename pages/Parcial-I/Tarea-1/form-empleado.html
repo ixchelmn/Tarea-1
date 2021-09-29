@@ -79,82 +79,137 @@
 
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb navbar-links">
-              <li class="breadcrumb-item "><a href="/index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Formulario Empleado</li>
-              <li class="breadcrumb-item"><a href="/pages/Parcial-I/Tarea-1/form-usuario.html">Formulario Usuario</a></li>
-              <li class="breadcrumb-item"><a href="/pages/Parcial-I/Tarea-1/form-alumno.html">Formulario Alumnos</a></li>
-              <li class="breadcrumb-item"><a href="/pages/Parcial-I/Tarea-1/form-grado.html">Formulario Grados</a></li>
-          </nav>
+                <li class="breadcrumb-item "><a href="/index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Formulario Empleado</li>
+                <li class="breadcrumb-item"><a href="/pages/Parcial-I/Tarea-1/form-usuario.html">Formulario Usuario</a>
+                </li>
+                <li class="breadcrumb-item"><a href="/pages/Parcial-I/Tarea-1/form-alumno.html">Formulario Alumnos</a>
+                </li>
+                <li class="breadcrumb-item"><a href="/pages/Parcial-I/Tarea-1/form-grado.html">Formulario Grados</a>
+                </li>
+        </nav>
 
-        <div class = "container-fluid">
-            <h2>Formulario para Mantenimiento de Empleado</h2>
-
-            <?php 
-include("menu.php");
-?>
-
-
+        <div class="form-container justify-content-center">
+            <h2 class="form-title">Formulario para Mantenimiento de Empleado</h2>
         </div>
-        <form name='formulario' id='formulario' action='POST'>
-
-            <fieldset>
-                <label>Nombre del Empleado</label>
-                <input type="text" name="txtnombre" id="txtnombre" value="" maxlength="45"
-                    placeholder='Ingrese el nombre o los nombres del empleado'>
-            </fieldset>
-
-            <fieldset>
-                <label>Primer Apellido Empleado</label>
-                <input type="text" name="txtape1" id="txtape1" value="" maxlength="45">
-            </fieldset>
-
-            <fieldset>
-                <label>Segundo Apellido Empleado</label>
-                <input type="text" name="txtape2" id="txtape2" value="" maxlength="45">
-            </fieldset>
-
-            <fieldset>
-                <label>Cedula Empleado</label>
-                <input type="text" name="txtcedula" id="txtcedula" value="" maxlength="45">
-            </fieldset>
-
-            <!--Fecha de Ingreso (Date)-->
-
-            <fieldset>
-                <label>Fecha de Ingreso</label>
-                <input type="date" name="dfechai" id="dfechai" value="">
-            </fieldset>
+        <div class="form-container justify-content-center">
 
 
-            <!--Fecha de Nacimiento (Date)-->
+            <form class="justify-content-center">
+                <div class="row mb-3">
+                    <label for="inputName" class="col-sm-6 col-form-label">Nombre del Empleado</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputApellido1" class="col-sm-6 col-form-label">Primer Apellido</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputApellido1">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputApellido2" class="col-sm-6 col-form-label">Segundo Apellido</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputApellido2">
+                    </div>
+                </div>
+                              
+                <div class="row mb-6">
+                    <label for="validationServerCedula" class="form-label">Numero de Cedula</label>
+                    <div class="col-md-4">
+                        <div class="input-group has-validation">
+                            <input type="number" class="form-control is-invalid" id="validationServerCedula"
+                                aria-describedby="inputGroupPrepend3 validationServerCedulaFeedback" required>
+                            <div id="validationServerCedulaFeedback" class="invalid-feedback">
+                                Por favor ingrese su cedula.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="idate">Fecha de Ingreso:</label><br />
+                        <input type="date" id="idate" name="idate" /><br /><br />
+                        <label for="bdate">Fecha de Nacimiento:</label><br />
+                        <input type="date" id="bdate" name="bdate" /><br />
+                    </div>
+                </div>
+                <fieldset class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="validationMarital" class="form-label">Estado Civil</label>
+                        <select class="form-select" id="validationMarital" required>
+                            <option selected disabled value="">Elija su estado Civil</option>
+                            <option>Soltero</option>
+                            <option>Casado</option>
+                            <option>Viudo</option>
+                            <option>Divorciado</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor elija su estado civil.
+                        </div>
+                    </div>
+                    <div class="row mb-3 mt-2">
+                        <div class="col-md-4">
+                            <label for="direccion" class="form-label">Ingrese su Direccion</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row mb-3 mt-2">
+                            <label for="validationServerEmail" class="form-label">Correo Electronico</label>
+                            <div class="col-md-4">
+                                <div class="input-group has-validation">
+                                    <input type="email" class="form-control is-invalid" id="validationServerEmail"
+                                        aria-describedby="inputGroupPrepend3 validationServerEmailFeedback" required>
+                                    <div id="validationServerEmailFeedback" class="invalid-feedback">
+                                        Por favor ingrese su correo electronico.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationMarital" class="form-label">Estado</label>
+                            <select class="form-select" id="validationMarital" required>
+                                <option selected disabled value="">Estado del empleado</option>
+                                <option>Activo</option>
+                                <option>Inactivo</option>
+                                <option>Supendido</option>
+                                <option>Jubilado</option>
+                                <option>Fallecido</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor el estado del empleado.
+                            </div>
+                            <div class="row mb-3 mt-2">
+                                <label for="inputTelFijo" class="col-sm-6 col-form-label">Telefono Fijo</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputTelFijo">
+                                </div>
+                            </div>
+                            <div class="row mb-3 mt-2">
+                                <label for="inputTelCelular" class="col-sm-6 col-form-label">Telefono Celular</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputTelCelular">
+                                </div>
+                            </div>
+                            <div class="row mb-3 mt-2">
+                                <label for="inputSalario" class="col-sm-6 col-form-label">Ingrese el salario</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputSalario">
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <label for="direccion" class="form-label">Observaciones</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
 
-            <fieldset>
-                <label>Fecha de Nacimiento</label>
-                <input type="date" name="dnac" id="dnac" value="">
-            </fieldset>
-
-
-            <!--Estado Civil (ComboBox)-->
-            <fieldset>
-                <label>Estado Civil</label>
-                <select name='cmbestadoc' id='cmbestadoc'>
-                    <option value='soltero'>SOLTERO</option>
-                    <option value='casado'>CASADO</option>
-                    <option value='viudo(a)'>VIUDO(A)</option>
-                    <option value='divorciado'>DIVORCIADO</option>
-                </select>
-            </fieldset>
-
-
-            <!--Observaciones (TextArea)-->
-            <fieldset>
-                <textarea name='txtobser' id='txtobser'>
-
-		</textarea>
-            </fieldset>
-
-
-
+                    <div>
+                        <button type="submit" class="btn btn-primary white-button">Enviar datos</button>
+                    </div>
+                </div>
+        </div>
+        </fieldset>
 
         </form>
         <footer>

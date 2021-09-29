@@ -76,16 +76,16 @@ footer {
 }
 
 .white-button {
-    color: #F0637A;
+    color: #f07863;
     background-color: white;
-    border-color: #F0637A;
+    border-color: #f07863;
     border-radius: unset;
-    font-family: 'Advent Pro Medium', sans-serif;
-    ;
+    font-family: 'Neucha', cursive;
+    
 }
 
 .white-button:hover {
-    background-color: #F0637A;
+    background-color: #f07863;
     color: white;
 }
 
@@ -119,3 +119,12 @@ footer {
     font-family: 'Neucha', cursive !important;
 }
 
+.form-container{
+    width: unset !important;
+    display: flex;
+}
+
+.form-title{
+    padding-right: 10rem;
+    font-family: 'Neucha', cursive !important;
+}
